@@ -3,7 +3,9 @@ import LinkButtonHeader from "./LinkButtonHeader.astro";
 ---
 
 <header class="sticky top-0 w-[100vw] bg-[#1e1e1e] border-b-2 border-[#2e2e2e]">
-    <nav class="flex justify-between items-center max-w-[80vw] mx-auto h-[70px]">
+    <nav
+        class="flex justify-between items-center max-w-[80vw] mx-auto h-[70px]"
+    >
         <a href="/">
             <svg class="h-[50px]" viewBox="0 0 588 150" fill="none">
                 <path
@@ -50,40 +52,43 @@ import LinkButtonHeader from "./LinkButtonHeader.astro";
         </a>
 
         <ul
-            class="ulNav flex flex-col gap-3 absolute right-0 h-screen w-[45%] bg-black top-0 p-6 
-            md:flex-row md:bg-transparent md:mx-auto md:p-0 md:justify-end md:items-center md:h-full md:w-[100%] md:relative"
+            class="flex flex-col gap-3 absolute right-0 h-screen w-[45%] bg-black top-0 p-6
+            min-[900px]:flex-row min-[900px]:bg-transparent min-[900px]:mx-auto min-[900px]:p-0 min-[900px]:justify-end min-[900px]:items-center min-[900px]:h-full min-[900px]:w-[100%] min-[900px]:relative"
         >
-            <li class="flex justify-end items-end md:hidden">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-x"
-                    ><path stroke="none" d="M0 0h24v24H0z" fill="none"
-                    ></path><path d="M18 6l-12 12"></path><path d="M6 6l12 12"
-                    ></path></svg
-                >
+            <li class="flex justify-end items-end min-[900px]:hidden">
+                <button>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-x"
+                        ><path stroke="none" d="M0 0h24v24H0z" fill="none"
+                        ></path><path d="M18 6l-12 12"></path><path
+                            d="M6 6l12 12"></path></svg
+                    >
+                </button>
             </li>
             <li><LinkButtonHeader href="#inico">Inicio</LinkButtonHeader></li>
-            <li><LinkButtonHeader href="#sobremi">Sobre mí</LinkButtonHeader></li>
-            <li><LinkButtonHeader href="#servicios">Mis servicios</LinkButtonHeader></li>
-            <li><LinkButtonHeader href="#proyectos">Proyectos</LinkButtonHeader></li>
-            <li><LinkButtonHeader href="#contactame">Contáctame</LinkButtonHeader></li>
+            <li>
+                <LinkButtonHeader href="#sobremi">Sobre mí</LinkButtonHeader>
+            </li>
+            <li>
+                <LinkButtonHeader href="#servicios"
+                    >Mis servicios</LinkButtonHeader>
+            </li>
+            <li>
+                <LinkButtonHeader href="#proyectos">Proyectos</LinkButtonHeader>
+            </li>
+            <li>
+                <LinkButtonHeader href="#contactame"
+                    >Contáctame</LinkButtonHeader>
+            </li>
         </ul>
     </nav>
 </header>
-
-<style>
-    @media (min-width: 768px){
-        .ulNav {
-            position: unset;
-        }    
-    }
-   
-</style>
