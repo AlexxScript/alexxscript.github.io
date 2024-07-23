@@ -2,9 +2,9 @@
 import LinkButtonHeader from "./LinkButtonHeader.astro";
 ---
 
-<header class="sticky top-0 w-[100vw] bg-[#1e1e1e] border-b-2 border-[#2e2e2e]">
+<header class="fixed top-0 w-[100vw] bg-[#1e1e1e] border-b-2 border-[#2e2e2e]">
     <nav
-        class="flex justify-between items-center max-w-[80vw] mx-auto h-[70px]"
+        class="flex justify-between items-center max-w-[80vw] w-full mx-auto h-[70px]"
     >
         <a href="/">
             <svg class="h-[50px]" viewBox="0 0 588 150" fill="none">
@@ -51,13 +51,30 @@ import LinkButtonHeader from "./LinkButtonHeader.astro";
             </svg>
         </a>
 
-        <ul
-            class="flex flex-col gap-3 absolute right-0 h-screen w-[45%] bg-black top-0 p-6
-            min-[900px]:flex-row min-[900px]:bg-transparent min-[900px]:mx-auto min-[900px]:p-0 min-[900px]:justify-end min-[900px]:items-center min-[900px]:h-full min-[900px]:w-[100%] min-[900px]:relative"
-        >
+        <button class="min-[900px]:hidden" id="buttonOpen">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                    d="M4 6l16 0"></path><path d="M4 12l16 0"></path><path
+                    d="M4 18l16 0"></path></svg
+            >
+        </button>
+
+        <ul class="navUl flex flex-col gap-3 absolute right-[-100%] h-screen w-[45%] bg-black top-0 p-6 
+            min-[900px]:flex-row min-[900px]:bg-transparent min-[900px]:mx-auto min-[900px]:p-0 min-[900px]:justify-end min-[900px]:right-auto min-[900px]:items-center min-[900px]:h-full min-[900px]:w-[100%] min-[900px]:relative">
             <li class="flex justify-end items-end min-[900px]:hidden">
-                <button>
+                <button id="buttonClose">
                     <svg
+                        class="bg-black"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -75,20 +92,33 @@ import LinkButtonHeader from "./LinkButtonHeader.astro";
                 </button>
             </li>
             <li><LinkButtonHeader href="#inico">Inicio</LinkButtonHeader></li>
-            <li>
-                <LinkButtonHeader href="#sobremi">Sobre mí</LinkButtonHeader>
-            </li>
-            <li>
-                <LinkButtonHeader href="#servicios"
-                    >Mis servicios</LinkButtonHeader>
-            </li>
-            <li>
-                <LinkButtonHeader href="#proyectos">Proyectos</LinkButtonHeader>
-            </li>
-            <li>
-                <LinkButtonHeader href="#contactame"
-                    >Contáctame</LinkButtonHeader>
-            </li>
+            <li><LinkButtonHeader href="#sobremi">Sobre mí</LinkButtonHeader></li>
+            <li><LinkButtonHeader href="#servicios">Mis servicios</LinkButtonHeader></li>
+            <li><LinkButtonHeader href="#proyectos">Proyectos</LinkButtonHeader></li>
+            <li><LinkButtonHeader href="#contactame">Contáctame</LinkButtonHeader></li>
         </ul>
     </nav>
 </header>
+
+<script>
+    const buttonClose = document.getElementById("buttonClose");
+    const buttonOpen = document.getElementById("buttonOpen")
+    const navUl = document.querySelector(".navUl");
+
+    buttonClose?.addEventListener("click", () => {
+        navUl?.classList.add("right-[-100%]");
+    });
+
+    buttonOpen?.addEventListener("click",()=>{
+        navUl?.classList.add("right-0")
+        navUl?.classList.remove("right-[-100%]");
+    })
+
+</script>
+
+
+<style>
+    li{
+        background-color: black;
+    }
+</style>
