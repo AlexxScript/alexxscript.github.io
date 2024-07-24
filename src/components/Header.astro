@@ -2,7 +2,7 @@
 import LinkButtonHeader from "./LinkButtonHeader.astro";
 ---
 
-<header class="fixed top-0 w-[100vw] bg-[#1e1e1e] border-b-2 border-[#2e2e2e]">
+<header class="fixed top-0 w-[100vw] bg-[#1e1e1e] border-b-2 border-[#2e2e2e] z-10">
     <nav
         class="flex justify-between items-center max-w-[80vw] w-full mx-auto h-[70px]"
     >
@@ -69,7 +69,7 @@ import LinkButtonHeader from "./LinkButtonHeader.astro";
             >
         </button>
 
-        <ul class="navUl flex flex-col gap-3 absolute right-[-100%] h-screen w-[45%] bg-black top-0 p-6 
+        <ul class="navUl flex flex-col gap-3 right-[-100%] h-screen w-[45%] bg-black top-0 p-6 z-30 fixed 
             min-[900px]:flex-row min-[900px]:bg-transparent min-[900px]:mx-auto min-[900px]:p-0 min-[900px]:justify-end min-[900px]:right-auto min-[900px]:items-center min-[900px]:h-full min-[900px]:w-[100%] min-[900px]:relative">
             <li class="flex justify-end items-end min-[900px]:hidden">
                 <button id="buttonClose">
