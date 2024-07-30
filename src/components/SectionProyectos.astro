@@ -4,6 +4,7 @@ import Backend from "./Backend.astro";
 import Frontend from "./Frontend.astro";
 import Herramientas from "./Herramientas.astro";
 import RedireccionProyecto from "./RedireccionProyecto.astro";
+import Tecnologias from "./Tecnologias.astro";
 import TecnologiasProyecto from "./TecnologiasProyecto.astro";
 ---
 
@@ -35,24 +36,7 @@ import TecnologiasProyecto from "./TecnologiasProyecto.astro";
             </li>
         </ul>
     </div>
-    <div class="py-4">
-        <h3 class="text-3xl font-semibold flex items-center gap-3 ">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="30"  height="30"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-code-dots"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 12h.01" /><path d="M12 12h.01" /><path d="M9 12h.01" /><path d="M6 19a2 2 0 0 1 -2 -2v-4l-1 -1l1 -1v-4a2 2 0 0 1 2 -2" /><path d="M18 19a2 2 0 0 0 2 -2v-4l1 -1l-1 -1v-4a2 2 0 0 0 -2 -2" /></svg>
-            Tecnologías
-        </h3>
-        <p class="text-gray-400">Listado de las tecnologías con las que he trabajado, he realizado proyectos y he practicado.</p>
-        <div class="flex flex-col ">
-            <div class="flex justify-center items-center gap-5 flex-wrap md:items-baseline">
-                <Frontend />
-                <Backend/>
-            </div>
-            <div class="flex justify-center gap-5 flex-wrap">
-                <Aprendiendo/> 
-                <Herramientas/>
-            </div>
-           
-        </div>
-    </div>
+   <Tecnologias/> 
 </section>
 
 <style>
