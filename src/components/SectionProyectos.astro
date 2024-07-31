@@ -6,6 +6,16 @@ import Herramientas from "./Herramientas.astro";
 import RedireccionProyecto from "./RedireccionProyecto.astro";
 import Tecnologias from "./Tecnologias.astro";
 import TecnologiasProyecto from "./TecnologiasProyecto.astro";
+
+const contenido = [
+    {
+        name:"Sistema de administración escolar.",
+        descripcion:"Proyecto que se llevará a cabo con el objetivo de practicar las tecnologías de Laravel con VueJS utilizando Inertia, Sail para trabajar con entornos de desarrollo basados en docker para ejecutar aplicaciones de Laravel, Seeders Laravel, autenticación y autorización con Laravel, uso de su ORM Eloquent y migraciones.",
+        completado:false,
+        href:"https://github.com/AlexxScript/laravelPractice"
+    }
+]
+
 ---
 
 <section id="proyectos">
@@ -13,29 +23,29 @@ import TecnologiasProyecto from "./TecnologiasProyecto.astro";
         <svg  xmlns="http://www.w3.org/2000/svg"  width="30"  height="30"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-code"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" /></svg>
         Proyectos y tecnologías.
     </h2>
-    <div>
+    <article>
         <p class="text-gray-400">Aquí podrás consultar algunos proyectos personales que he realizado y realizaré para practicar así mismo explorar las tecnologías emergentes ademas se 
             demuestra la intención de seguir aprendiendo y explorar nuevas tecnologías y herramientas.</p>
         <ul class="my-5">
-            <li class="p-5">
-                <h3 class="text-xl font-semibold text-[#fc6068]">Sistema de administración escolar.</h3>
-                <p>
-                    Proyecto que se llevará a cabo con el objetivo de practicar las tecnologías de Laravel con VueJS utilizando Inertia,
-                    Sail para trabajar con entornos de desarrollo basados en docker para ejecutar aplicaciones de Laravel, Seeders Laravel,
-                    autenticación y autorización con Laravel, uso de su ORM Eloquent y migraciones.
-                </p>
-                <div class="flex flex-col lg:flex-row gap-3 my-3">
-                    <p class="text-center text-sm p-2 border rounded-full bg-[#20ae54b0] border-[#30bc61]">
-                        En desarrollo
-                    </p>
-                    <a href="https://github.com/AlexxScript/SS" class="flex p-2 justify-center items-center gap-2 rounded-full bg-[#4e4e4eaa] text-sm border">
-                        Respositorio del proyecto
-                        <svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
-                    </a>
-                </div>
-            </li>
+            {
+                contenido.map(el=>(
+                    <li class="p-5">
+                        <h3 class="text-xl font-semibold text-[#fc6068]">{ el.name }</h3>
+                        <p>{ el.descripcion }</p>
+                        <div class="flex flex-col lg:flex-row gap-3 my-3">
+                            <p class={`text-center text-sm p-2 border-2 rounded-full ${el.completado ? "bg-[#20ae54b0] border-[#30bc61]" : "bg-[#3b83f68c] border-[#3e86f8]"} `}>
+                                { el.completado ? "Completado" : "En desarrollo" }
+                            </p>
+                            <a href={el.href} class="flex p-2 justify-center items-center gap-2 rounded-full bg-[#424242aa] hover:bg-[#4e4e4e55] transition-all duration-100 text-sm border-2">
+                                Respositorio del proyecto
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+                            </a>
+                        </div>
+                    </li>  
+                ))
+            }
         </ul>
-    </div>
+    </article>
    <Tecnologias/> 
 </section>
 
