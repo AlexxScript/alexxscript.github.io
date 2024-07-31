@@ -1,12 +1,13 @@
 ---
 interface Props {
     href: string
+    download?:string
 }
 
-const { href } = Astro.props
+const { href, download } = Astro.props
 ---
-<li>
-    <a href={href} target="_blank" class="flex text-base justify-center items-center gap-1 hover:border-[#FC6168] hover:text-[#FC6168] duration-200">
+<li class="w-auto">
+    <a href={href} download={download} target="_blank" class="flex text-sm flex-col justify-center items-center gap-1 hover:border-[#FC6168] hover:text-[#FC6168] duration-200">
         <slot/>
     </a>
 </li>
