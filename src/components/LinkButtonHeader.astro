@@ -1,11 +1,50 @@
 ---
 interface Props {
     href:string
+    ariaLabel:string
 }
 
-const { href } = Astro.props
+const { href, ariaLabel } = Astro.props
 ---
 
-<a href={href} class="text-sm p-1 border-b-2 border-transparent min-[400px]:text-base hover:text-[#FC6168] transition-all duration-150">
+<a aria-label={ariaLabel} href={href} class="item text-sm p-1 border-b-2 border-transparent min-[400px]:text-base hover:text-[#FC6168] transition-all duration-150">
     <slot/>
 </a>
+
+<script>
+    document.addEventListener("DOMContentLoaded",()=>{
+        const item = document.querySelectorAll(".item")
+        const sections = document.querySelectorAll("section")
+        const proper = {
+            root: null,
+            rootMargin: "0px",
+            threshold:0.3
+        }
+
+        const observador = new IntersectionObserver((entr,obser)=>{
+            entr.forEach( e =>{
+                if(e.isIntersecting){
+                    item.forEach(i => {
+                        if(e.target.id == i.getAttribute("aria-label")){
+                            i.classList.add("active")
+                        } else {
+                            i.classList.remove("active")
+                        }
+                    })
+                }
+            })
+        },proper)
+
+        sections.forEach(section => {
+            observador.observe(section)
+        })
+    })
+</script>
+
+<style>
+    .active{
+        color: #FC6168;
+        transition-property: all;
+        transition-duration: 100ms;
+    }
+</style>
