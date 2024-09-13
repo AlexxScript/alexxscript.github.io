@@ -1,7 +1,6 @@
 ---
 import FooterSocial from "./FooterSocial.astro"
 import FooterCorreo from "./icons/footer/FooterCorreo.astro"
-import FooterCV from "./icons/footer/FooterCV.astro"
 import FooterGithub from "./icons/footer/FooterGithub.astro"
 import FooterLinkedIn from "./icons/footer/FooterLinkedIn.astro"
 
@@ -23,11 +22,6 @@ const links = [
         href:"mailto:https://ameneyroalex@gmail.com",       
         download:""
     },
-    {
-        iconName:"Descargar CV",
-        href:"/AlejandroCV.pdf",
-        download:"AlejandroCV.pdf"
-    },
 ]
 ---
 
@@ -42,7 +36,6 @@ const links = [
                         { el.iconName=="LinkedIn" && <FooterLinkedIn/> }
                         { el.iconName=="GitHub" && <FooterGithub/> }
                         { el.iconName=="Correo" && <FooterCorreo/> }
-                        { el.iconName=="Descargar CV" && <FooterCV/> }
                         {el.iconName}
                     </FooterSocial>
                 ))
