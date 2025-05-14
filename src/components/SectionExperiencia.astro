@@ -5,6 +5,7 @@ import Css from "./icons/tecnologias/Css.astro";
 import Docker from "./icons/tecnologias/Docker.astro";
 import Firebase from "./icons/tecnologias/Firebase.astro";
 import Git from "./icons/tecnologias/Git.astro";
+import Golang from "./icons/tecnologias/Golang.astro";
 import JS from "./icons/tecnologias/JS.astro";
 import Nodejs from "./icons/tecnologias/Nodejs.astro";
 import React from "./icons/tecnologias/React.astro";
@@ -42,6 +43,21 @@ const experiencias = [
         title:"Desarrollo aplicación web cafeteria en tiempo real",
         date:"Enero 2024–Julio 2024",
         description:"Me encargué de la construcción de una aplicación web en tiempo real para una cafeteria. Mis tareas incluyeron el diseño de la base de datos en PostgreSQL, desarrollo del backend con ExpressJS y SocketIO, autenticación con JWT, desarrollo del frontend con ReactJS, React router, estilización con Tailwind, uso de los reducers y contextos para el manejo del estado global.",
+        redireccion: [
+            {
+                id:"repositorio",
+                subtitle:"Repositorio del proyecto",
+                href:"https://github.com/AlexxScript/realTimeApp"
+            },
+        ],
+        tecnologias:[
+            {name:"JavaScript"},{name:"ReactJS"},{name:"NodeJS"},{name:"CSS"},{name:"Docker"},{name:"PostgreSQL"},{name:"SocketIO"},{name:"Tailwind CSS"}
+        ]
+    },
+    {
+        title:"Desarrollo de sistema gestor de archivos para terminal de linux",
+        date:"Abril 2025– En desarrollo",
+        description:"Encargado del análisis",
         redireccion: [
             {
                 id:"repositorio",
@@ -93,6 +109,7 @@ const experiencias = [
                                         { tec.name=="SocketIO" && <Socket/> }
                                         { tec.name=="PostgreSQL" && <Sql/> }
                                         { tec.name=="NodeJS" && <Nodejs/> }
+                                        { tec.name=="Go" && <Golang/> }
                                         {tec.name}
                                     </IconsTech>
                                 ))
