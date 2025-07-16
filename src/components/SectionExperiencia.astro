@@ -2,15 +2,21 @@
 import ExperienciaArrow from "./icons/experiencia/ExperienciaArrow.astro";
 import ExperienciaGithub from "./icons/experiencia/ExperienciaGithub.astro";
 import Css from "./icons/tecnologias/Css.astro";
+import Django from "./icons/tecnologias/Django.astro";
 import Docker from "./icons/tecnologias/Docker.astro";
 import Firebase from "./icons/tecnologias/Firebase.astro";
 import Git from "./icons/tecnologias/Git.astro";
+import Go from "./icons/tecnologias/Go.astro";
+import Golang from "./icons/tecnologias/Golang.astro";
+import Java from "./icons/tecnologias/Java.astro";
 import JS from "./icons/tecnologias/JS.astro";
+import NextJs from "./icons/tecnologias/NextJs.astro";
 import Nodejs from "./icons/tecnologias/Nodejs.astro";
 import React from "./icons/tecnologias/React.astro";
 import Socket from "./icons/tecnologias/Socket.astro";
 import Sql from "./icons/tecnologias/Sql.astro";
 import Tailwind from "./icons/tecnologias/Tailwind.astro";
+import TerminalLinux from "./icons/tecnologias/TerminalLinux.astro";
 import IconsTech from "./IconsTech.astro";
 import ListadoExperiencia from "./ListadoExperiencia.astro";
 import ListTechs from "./ListTechs.astro";
@@ -52,7 +58,52 @@ const experiencias = [
         tecnologias:[
             {name:"JavaScript"},{name:"ReactJS"},{name:"NodeJS"},{name:"CSS"},{name:"Docker"},{name:"PostgreSQL"},{name:"SocketIO"},{name:"Tailwind CSS"}
         ]
-    }
+    },
+    {
+        title:"Patli – Sistema Web de Predicción de Diabetes",
+        date:"Octubre Diciembre 2024",
+        description:"Proyecto FullStack enfocado en la predicción de diabetes tipo II. Se desarrolló con Next.js en el frontend y Django en el backend. Incluyó el análisis y limpieza de datos, integración de un modelo de Machine Learning, desarrollo de APIs, visualizaciones con Chart.js, autenticación, dockerización y despliegue en VPS.",
+        redireccion: [
+            {
+                id:"repositorio",
+                subtitle:"Repositorio del proyecto",
+                href:"https://github.com/AlexxScript/pahtli"
+            },
+        ],
+        tecnologias:[
+            {name:"NextJS"},{name:"Django"},{name:"NodeJS"},{name:"Docker"},{name:"PostgreSQL"},{name:"Tailwind CSS"},{name:"Terminal"},{name:"Linux"}
+        ]
+    },
+    {
+        title: "Sistema de Gestión de Biblioteca en Java",
+        date:"Noviembre 2024-Diciembre 2024",
+        description: `Desarrollé un sistema completo para la gestión de una biblioteca en Java, partiendo desde la ingeniería de requerimientos hasta la implementación final. El proyecto aplica arquitectura MVC, patrones DAO y DTO, y una conexión a base de datos relacional usando JDBC. Se desarrolló con un enfoque en separación de responsabilidades, diseño limpio y buenas prácticas de desarrollo de software.`,
+        redireccion: [
+            {
+                id:"repositorio",
+                subtitle:"Repositorio del proyecto",
+                href:"https://github.com/AlexxScript/biblioteca"
+            },
+        ],
+        tecnologias:[
+            {name:"Java"},{name:"Terminal"},{name:"Linux"},{name:"MYSQL"}
+        ]
+    },
+    {
+        title:"Desarrollo de sistema gestor de archivos para terminal de linux",
+        date:"Abril 2025–Junio 2025",
+        description: `Desarrollé una aplicación de línea de comandos utilizando Go, orientada a sistemas Linux, que permite explorar y gestionar archivos desde la terminal mediante una interfaz interactiva construida con la biblioteca tview. La interfaz tipo TUI (Terminal User Interface) simula una vista de árbol de archivos, mostrando visualmente directorios y archivos del sistema, junto con sus permisos, grupo y propietario. Además, implementé una integración directa con la API pública de GitHub, permitiendo al usuario ingresar su nombre de usuario y, tras presionar Enter, visualizar sus repositorios públicos y seleccionar cualquiera para clonarlo localmente. Todo esto sin salir de la terminal. Como parte de la distribución, desarrollé un script automatizado de instalación (install.sh) que mueve el binario a /usr/local/bin, facilitando su uso como comando del sistema. También empaqueté la aplicación para Linux como un archivo comprimido .tar.gz, conteniendo el binario, documentación (README.md) y el instalador. De esta forma, puede ejecutarse fácilmente en cualquier distribución Linux sin necesidad de tener Go instalado.`,
+        redireccion: [
+            {
+                id:"repositorio",
+                subtitle:"Repositorio del proyecto",
+                href:"https://github.com/AlexxScript/gestorgolang"
+            },
+        ],
+        tecnologias:[
+            {name:"Golang"},{name:"Terminal"},{name:"Linux"}
+        ]
+    },
 ]
 ---
 
@@ -92,7 +143,14 @@ const experiencias = [
                                         { tec.name=="Docker" && <Docker/> }
                                         { tec.name=="SocketIO" && <Socket/> }
                                         { tec.name=="PostgreSQL" && <Sql/> }
+                                        { tec.name=="MYSQL" && <Sql/> }
                                         { tec.name=="NodeJS" && <Nodejs/> }
+                                        { tec.name=="Golang" && <Go/> }
+                                        { tec.name=="Terminal" && <TerminalLinux/> }
+                                        { tec.name=="Linux" && <TerminalLinux/> }
+                                        { tec.name=="Java" && <Java/> }
+                                        { tec.name=="NextJS" && <NextJs/> }
+                                        { tec.name=="Django" && <Django/> }
                                         {tec.name}
                                     </IconsTech>
                                 ))

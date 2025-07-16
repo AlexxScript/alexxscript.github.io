@@ -9,10 +9,10 @@ import TecnologiasProyecto from "./TecnologiasProyecto.astro";
 
 const contenido = [
     {
-        name:"Sistema de administración escolar.",
-        descripcion:"Proyecto que se llevará a cabo con el objetivo de practicar las tecnologías de Laravel con VueJS utilizando Inertia, Sail para trabajar con entornos de desarrollo basados en docker para ejecutar aplicaciones de Laravel, Seeders Laravel, autenticación y autorización con Laravel, uso de su ORM Eloquent y migraciones.",
+        name:"Sistema gestor de archivos con Golang para linux",
+        descripcion:"Proyecto que se llevará a cabo con el fin de ampliar el conocimiento sobre el funcionamiento de la gestión de archivos del sistema operativo Linux, del mismo modo poner en práctica las habilidades aprendidas sobre el lenguaje de programación Go y sus librerías para la creación de aplicaciones de CLI con cobra. Finalmente se le integrará la api de Github para realizar operaciones sin necesidad de teclear los comandos.",
         completado:false,
-        href:"https://github.com/AlexxScript/laravelPractice"
+        href:"https://github.com/AlexxScript/gestorgolang.git"
     }
 ]
 
@@ -36,7 +36,7 @@ const contenido = [
                             <p class={`text-center text-sm p-2 border-2 rounded-full ${el.completado ? "bg-[#20ae54b0] border-[#30bc61]" : "bg-[#3b83f68c] border-[#3e86f8]"} `}>
                                 { el.completado ? "Completado" : "En desarrollo" }
                             </p>
-                            <a href={el.href} class="flex p-2 justify-center items-center gap-2 rounded-full bg-[#424242aa] hover:bg-[#4e4e4e55] transition-all duration-100 text-sm border-2">
+                            <a href={el.href} target="_blank" class="flex p-2 justify-center items-center gap-2 rounded-full bg-[#424242aa] hover:bg-[#4e4e4e55] transition-all duration-100 text-sm border-2">
                                 Respositorio del proyecto
                                 <svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
                             </a>
